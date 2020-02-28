@@ -141,9 +141,12 @@ class Instructor extends Lambdasian {
       this.favLanguage = attr.favLanguage,
       this.catchPhrase = attr.catchPhrase
     }
-    // demo(subject){
-    //   return 'Today we are learning `${subject}, `
-    // }
+    demo(subject){
+      return `Today we are learning ${subject}`;
+    }
+    grade(student, subject){
+      return `${student.name} receives a perfrect score on ${subject}`;
+    }
   }
 
 
@@ -163,8 +166,11 @@ class Instructor extends Lambdasian {
         + `PRAssignment` a method that receives a subject as an argument and returns `student.name has submitted a PR for {subject}`
         + `sprintChallenge` similar to PRAssignment but returns `student.name has begun sprint challenge on {subject}`
 */
-class Student {
+class Student extends Lambdasian {
+  constructor(att){
+    this.previousBackground
 
+  }
 }
 
 /*
