@@ -145,7 +145,7 @@ class Instructor extends Lambdasian {
       return `Today we are learning ${subject}`;
     }
     grade(student, subject){
-      return `${student.name} receives a perfrect score on ${subject}`;
+      return `${student.name} receives a perfect score on ${subject}`;
     }
   }
 
@@ -166,14 +166,26 @@ class Instructor extends Lambdasian {
         + `PRAssignment` a method that receives a subject as an argument and returns `student.name has submitted a PR for {subject}`
         + `sprintChallenge` similar to PRAssignment but returns `student.name has begun sprint challenge on {subject}`
 */
-// class Student extends Lambdasian { 
-//   constructor(att){
-//     super(att)
-//     this.previousBackground = att.previousBackground,
+class Student extends Lambdasian { 
+  constructor(att){
+    super(att)
+    this.previousBackground = att.previousBackground,
+    this.className = att.className,
+    this.favSubjects = att.favSubjects;
+  }
+  listSubjects(){
+    return `Loving, ${this.favSubjects}`;
+  }
+  PRAssignment(subject){
+    return `${this.name} has submitted a PR for ${subject}`;
+  }
 
+  sprintChallenge(subject){
+    return `${this.name} has begun sprint challenge on ${subject}`;
+  }
 
-//   }
-// }
+}
+
 
 /*
   TASK 6
@@ -188,8 +200,18 @@ class Instructor extends Lambdasian {
         + `standUp` a method that takes in a slack channel and returns `{name} announces to {channel}, @channel standy times!`
         + `debugsCode` a method that takes in a student object and a subject and returns `{name} debugs {student.name}'s code on {subject}`
 */
-class ProjectManager {
-
+class ProjectManager extends Instructor {
+  constructor(attr){
+    super(attr)
+    this.gradClassName = attr.gradClassName,
+    this.favInstructor = attr.favInstructor;
+  }
+  standUp(channel){
+   return `${this.name} announces to ${channel} @channel standy times!`;
+  }
+  debugsCode(student, subject){
+    return `${this.name} debugs ${student.name}'s code ${subject}`;
+  }
 }
 
 /*
